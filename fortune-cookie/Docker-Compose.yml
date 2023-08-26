@@ -6,3 +6,7 @@ services:
       - "3000:3000"
     volumes:
       - ".:/app"
+      - "/etc/localtime:/etc/localtime:ro"
+
+# ro tells the docker that we want read-only access to the file. this prevent the
+#constiner from being ablt to change the host's time zone settings.

@@ -6,7 +6,7 @@ const app = express();
 app.get('/', (req, res) => {
     // Run the system `fortune` command and respond with the message
     child_process.exec('fortune', (error, message) => {
-        console.log("Main heder", error, message)
+        console.log("Main heder", error, message, Date())
         if (error === null) {
             res.send(message);
         } else {
